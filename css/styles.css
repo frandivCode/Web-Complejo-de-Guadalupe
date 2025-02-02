@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+/* Font para los textos, font-family: "Lato", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Font para los titulos y subtitulos, font-family: "Cormorant Garamond", serif; */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* Font para breve descripciones, font-family: "Montserrat", serif; */
+
+header {
+    background-color: #fff;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.logo {
+    display: block;
+    object-fit: cover;
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.nav-links li a:hover {
+    color: #c49a6c;
+}
+
+.nav-links li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #c49a6c;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-info span {
+    font-size: 19px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #99754e;
+}
+
+.contact-info ion-icon {
+    color: #99754e;
+    font-size: 25px;
+}
+
+/* Botón de reserva */
+.btn-reserva {
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #c49a6c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-reserva:hover {
+    background-color: #c08347;
+}
+
+.linea-divisora {
+    display: none;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+}
+
+.btn-reserva-mobile {
+    display: none;
+    text-align: center;
+    font-size: 1.1rem;
+    background-color: #c49a6c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background 0.3s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-reserva-mobile:hover {
+    background-color: #c08347;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.cabañas-info {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    margin-top: 30px;
+    color: #ffffff;
+}
+
+.address {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.address span {
+    font-size: 1rem;
+    margin-bottom: 7px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.sub-heading {
+    font-size: 1.3rem;
+    text-align: left;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+
+.socials {
+    display: flex;
+    gap: 20px;
+}
+
+.socials ion-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(3px, 2px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(11px, -10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .cabañas-info {
+        display: flex;
+    }
+
+    .logo {
+        margin-right: 250px;
+    }
+
+    .nav-links li a:hover::after {
+        width: 0;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: start;
+        position: absolute;
+        top: 131px;
+        right: 0;
+        background: #34495e;
+        width: 100%;
+        height: calc(100vh - 131px);
+        text-align: center;
+        padding: 50px;
+        transition: 0.3s;
+    }
+
+    .nav-links li a {
+        color: #ffffff;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 762px) {
+    .contact-info {
+        display: none;
+    }
+
+    .logo {
+        margin: 0;
+    }
+
+    .linea-divisora {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .container-reserva {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .btn-reserva-mobile {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width:480px) {
+    .nav-links {
+        padding: 40px 30px;
+        top: 111px;
+        height: calc(100vh - 111px);
+        gap: 30px;
+    }
+
+    .cabañas-info {
+        margin: 0;
+    }
+
+    .sub-heading {
+        font-size: 1.1rem;
+    }
+
+    .address span {
+        font-size: 14px;
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem;
+    }
+
+    .btn-reserva-mobile {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .socials {
+        gap: 10px;
+    }
+
+    .socials ion-icon {
+        font-size: 25px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width:375px) {
+    .logo {
+        width: 70px;
+    }
+
+    .nav-links {
+        padding: 30px 10px;
+        top: 91px;
+        height: calc(100vh - 91px);
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+    }
+
+    .sub-heading {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .btn-reserva-mobile {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .socials ion-icon {
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .address span {
+        font-size: 13px;
+    }
+
+    .container-reserva {
+        margin-top: 20px;
+    }
+}
