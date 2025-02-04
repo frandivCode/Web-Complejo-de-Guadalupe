@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/icon-pestaña.png" type="image/png">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Inicio | Complejo Cabañas de Guadalupe</title>
+    <title>Complejo Cabañas de Guadalupe</title>
 </head>
 
 <body>
+    <!-- Header -->
     <header>
-        <div class="container">
+        <div class="container-header">
+            <!-- Logo -->
             <img src="./img/logo.jpg" alt="logo de la página" class="logo">
+            <!-- Navigation -->
             <nav>
                 <ul class="nav-links">
                     <li><a href="#servicios">Servicios</a></li>
@@ -28,21 +31,26 @@
                         <div class="address">
                             <p class="sub-heading">Redes Sociales</p>
                             <ul class="socials">
-                                <ion-icon name="logo-instagram"></ion-icon>
-                                <ion-icon name="logo-facebook"></ion-icon>
+                                <a href="https://www.instagram.com/complejoguadalupe/" target="_blank"><ion-icon
+                                        name="logo-instagram"></ion-icon></a>
+                                <a href="https://www.facebook.com/guadalupealojamiento6" target="_blank"><ion-icon
+                                        name="logo-facebook"></ion-icon></a>
                             </ul>
                         </div>
                     </div>
+                    <!-- Reserva -->
                     <div class="container-reserva">
                         <div class="linea-divisora"></div>
-                        <button class="btn-reserva-mobile">Reserva ahora</button>
+                        <button class="btn-reserva-mobile">Reserva ya</button>
                     </div>
                 </ul>
             </nav>
+            <!-- Info Reserva -->
             <div class="contact-info">
-                <span><ion-icon name="call-outline"></ion-icon>+54 (3549) 999999</span>
-                <button class="btn-reserva">Reserva ahora</button>
+                <span><ion-icon name="call-outline"></ion-icon>351 73-70866</span>
+                <button class="btn-reserva">Reserva ya</button>
             </div>
+            <!-- Menu hamburguesa -->
             <div class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -50,6 +58,118 @@
             </div>
         </div>
     </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container-hero">
+                <div class="hero-text">
+                    <h1>Complejo de Guadalupe</h1>
+                    <p>Un lugar para disfrutar y relajarse al máximo.</p>
+                    <button class="btn-reserva fadeInUp">Reserva ya</button>
+                </div>
+            </div>
+            <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
+        </section>
+        <!-- Nuestros Servicios -->
+        <section class="services-section" id="servicios">
+            <div class="order-heading">
+                <h2 class="heading-subtitle texto-fade-in">Nuestros Servicios</h2>
+                <div class="separador hidden"></div>
+            </div>
+            <div class="services-container">
+                <div class="service-card hidden">
+                    <img src="./icons/wifi-3d.png" alt="icono de wifi" class="img-services">
+                    <h3>WiFi Gratis</h3>
+                    <p>Conexión de buena calidad en todas las cabañas.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/piscina.png" alt="icono de piscina" class="img-services">
+                    <h3>Pileta</h3>
+                    <p>Disfruta de nuestra pileta con familia y amigos para pasar el calor y un dia tranquilo.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/cama.png" alt="icono de piscina" class="img-services">
+                    <h3>Habitaciones</h3>
+                    <p>Dos habitaciones cada cabaña, en una habitación una cama matrimonial y en la otra habitación tres
+                        camas individuales.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/aire-acondicionado.png" alt="icono de aire acondicionado" class="img-services">
+                    <h3>Aire Acondicionado</h3>
+                    <p>Cabañas equipadas con aire acondicionado.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/television-inteligente.png" alt="icono de una television smart"
+                        class="img-services">
+                    <h3>TV por Cable</h3>
+                    <p>TV LCD de 32" con una amplia variedad de canales por cable,
+                        ideal para relajarte y
+                        entretenerte durante tu estadía.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/cocina.png" alt="icono de una cocina completa" class="img-services">
+                    <h3>Cocina Completa</h3>
+                    <p>Incluye cocina con horno, pava, heladera, termotanque eléctrico, equipada con todos los
+                        utensillos y
+                        productos de
+                        higiene y limpieza.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/servicio-de-habitaciones.png"
+                        alt="icono de una persona realizando el servicio de habitacion" class="img-services">
+                    <h3>Servicio de Habitación</h3>
+                    <p>Disfruta de un servicio de habitación impecable, con limpieza para una
+                        estadía cómoda, sin ninguna preocupación.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/cochera.png" alt="icono de una cochera" class="img-services">
+                    <h3>Incluye Cochera</h3>
+                    <p>Estacionamiento privado y gratuito para tu comodidad.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/parrilla-de-ladrillo.png" alt="icono de una persona con un asador"
+                        class="img-services">
+                    <h3>Incluye Asador</h3>
+                    <p>Cada cabaña cuenta con un asador privado para que prepares tus mejores comidas.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Acerca de Villa de Soto -->
+        <section class="acerca-de-section" id="acerca-de">
+            <div class="order-heading">
+                <h2 class="heading-subtitle texto-fade-in">Sobre Villa de Soto</h2>
+                <div class="separador hidden"></div>
+                <p class="descripcion-pueblo">Descubre los lugares más emblemáticos y disfruta de todo lo que Soto tiene
+                    para
+                    ofrecer.</p>
+            </div>
+            <!-- Lugares turísticos -->
+            <div class="lugares-turisticos-grid">
+
+                <div class="lugar-turistico">
+                    <img src="ruta-imagen-1.jpg" alt="Nombre del lugar 1">
+                    <h3>Nombre del lugar 1</h3>
+                    <p>Breve descripción del lugar y por qué es interesante.</p>
+                    <a href="#" class="btn-ver-mas">Ver más</a>
+                </div>
+
+                <div class="lugar-turistico">
+                    <img src="ruta-imagen-2.jpg" alt="Nombre del lugar 2">
+                    <h3>Nombre del lugar 2</h3>
+                    <p>Breve descripción del lugar y por qué es interesante.</p>
+                    <a href="#" class="btn-ver-mas">Ver más</a>
+                </div>
+
+                <div class="lugar-turistico">
+                    <img src="ruta-imagen-3.jpg" alt="Nombre del lugar 3">
+                    <h3>Nombre del lugar 3</h3>
+                    <p>Breve descripción del lugar y por qué es interesante.</p>
+                    <a href="#" class="btn-ver-mas">Ver más</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./javascript/app.js"></script>

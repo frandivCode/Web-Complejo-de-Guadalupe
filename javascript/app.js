@@ -5,14 +5,53 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.addEventListener("click", () => {
         navLinks.classList.toggle("active");
         menuToggle.classList.toggle("active");
+        body.classList.toggle("no-scroll");
     });
 
-    // Cerrar el menú al hacer clic fuera
     document.addEventListener("click", (event) => {
-        if (!event.target.closest(".menu-toggle") && !event.target.closest(".nav-links")) {
+        if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
             navLinks.classList.remove("active");
             menuToggle.classList.remove("active");
+            body.classList.remove("no-scroll");
         }
+    });
+});
+
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el, index) => {
+    el.style.transitionDelay = `${index * 0.2}s`;
+    observer.observe(el);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const textos = document.querySelectorAll(".texto-fade-in");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+
+    textos.forEach((texto) => {
+        observer.observe(texto);
     });
 });
 
