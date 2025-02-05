@@ -132,7 +132,7 @@ header {
 .icon-wpp {
     z-index: 1000;
     position: fixed;
-    bottom: 15px;
+    bottom: 60px;
     right: 15px;
     color: white;
     background-color: #25D366;
@@ -355,7 +355,7 @@ header {
 .menu-toggle span {
     width: 20px;
     height: 3px;
-    background: #333;
+    background: #ffffff;
     margin: 3px 0;
     transition: 0.3s ease;
 }
@@ -518,7 +518,8 @@ main {
     font-size: clamp(1rem, 3.5vw, 1.3rem);
     color: #DDE6ED;
     max-width: 50rem;
-    margin: 20px auto;
+    margin: 20px 0;
+    padding: 0 10px;
     text-align: center;
 }
 
@@ -870,6 +871,10 @@ textarea {
     font-size: 16px;
 }
 
+textarea::placeholder {
+    color: white;
+}
+
 #contador {
     margin-bottom: 10px;
     color: white;
@@ -946,7 +951,7 @@ input.error {
     transition: color 0.3s ease;
     color: #ffffff;
     text-decoration: none;
-    font-size: clamp(14px, 2vw, 18px);
+    font-size: clamp(15px, 2vw, 18px);
 }
 
 .list__links a::after {
@@ -1158,8 +1163,20 @@ input.error {
         width: 50px;
     }
 
+    .modal-content {
+        max-width: 95%;
+    }
+
+    .info-turistica {
+        width: 95%;
+    }
+
+    .lugares-turisticos-grid {
+        width: 95%;
+    }
+
     .acerca-de-section {
-        padding: 1rem;
+        padding: .5rem;
     }
 
     .order-heading {
