@@ -344,10 +344,15 @@ document.querySelectorAll('.scroll-link').forEach(link => {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                targetElement.classList.add('scroll-target');
                 targetElement.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
                 });
+
+                setTimeout(() => {
+                    targetElement.classList.remove('scroll-target');
+                }, 1000);
             }
         }
     });
