@@ -181,7 +181,7 @@ header {
 .logo {
     display: block;
     object-fit: cover;
-    width: 110px;
+    width: 100px;
     max-width: 100%;
     height: auto;
 }
@@ -579,37 +579,38 @@ main {
     color: #555;
 }
 
-/* === Galeria === */
+/* === Carrousel de Imagenes === */
 .gallery {
-    padding: 10px;
+    padding: 20px;
     width: 100%;
-    background: linear-gradient(to bottom, #eddfc6, #D4B998);
+    background: linear-gradient(to top, #eddfc6, #D4B998);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* ----- Bento Grid (Solo visible en pantallas grandes) ----- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.grid img {
+.slider img {
     width: 100%;
-    height: 400px;
-    max-width: 100%;
+    height: 100%;
     object-fit: cover;
-    cursor: pointer;
-    transition: .3s ease;
     border-radius: 5px;
     aspect-ratio: 16 / 9;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
 }
 
-.grid img:hover {
-    opacity: .9;
-    transform: scale(1.02);
-}
-
-/* ----- Estilos del Modal ----- */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -622,17 +623,14 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.oculto {
-    display: none;
 }
 
 .modal-content {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .close {
@@ -645,25 +643,42 @@ main {
     cursor: pointer;
 }
 
+.oculto {
+    display: none;
+}
+
 .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(114, 114, 114, 0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
     font-size: 24px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
 }
 
 #prevBtn {
-    left: 30px;
+    left: 10px;
 }
 
 #nextBtn {
-    right: 30px;
+    right: 10px;
+}
+
+#prevModalBtn {
+    left: 150px;
+}
+
+#nextModalBtn {
+    right: 150px;
 }
 
 /* === Acerca de Section === */
@@ -677,7 +692,7 @@ main {
 .descripcion-pueblo {
     font-size: clamp(1rem, 3.5vw, 1.3rem);
     color: #6F4E37;
-    max-width: 48rem;
+    max-width: 53rem;
     margin: 10px auto;
     font-weight: 500;
 }
@@ -713,7 +728,7 @@ main {
 /* Grid de lugares turísticos */
 .lugares-turisticos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     width: 90%;
     margin: 1.5rem auto 0 auto;
@@ -726,7 +741,6 @@ main {
     overflow: hidden;
     text-align: left;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-
 }
 
 .lugar-turistico img {
@@ -744,8 +758,8 @@ main {
 }
 
 .lugar-turistico h3 {
-    font-size: clamp(1.2rem, 4vw, 1.5rem);
-    color: #000000;
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    color: #33863C;
 }
 
 .lugar-turistico p {
@@ -754,7 +768,6 @@ main {
 }
 
 /* === Formulario Ubicación y Contacto === */
-
 .container-contacto {
     background: url(../img/blob-scene-haikei.svg);
     background-position: center;
@@ -983,7 +996,7 @@ input.error {
 }
 
 .divider {
-    width: 75%;
+    width: 100%;
     border: 1px solid rgba(219, 219, 219, 0.753);
     margin: 15px auto;
 }
@@ -1032,10 +1045,6 @@ input.error {
 
     .cabañas-info {
         display: flex;
-    }
-
-    .logo {
-        margin-right: 250px;
     }
 
     .nav-links li a:hover::after {
@@ -1103,16 +1112,14 @@ input.error {
         bottom: 80px;
         right: 15px;
     }
-}
 
-@media (max-width: 762px) {
     .contact-info {
         display: none;
     }
+}
 
-    .logo {
-        margin: 0;
-    }
+@media (max-width: 762px) {
+
 
     .linea-divisora {
         display: block;

@@ -115,48 +115,68 @@ function addAnimation(element, animation = 'fade-up', delay = 0) {
     observer.observe(element);
 }
 
-let images = []; // Array de imágenes
-let currentIndex = 0; // Índice de la imagen actual
+let images = [
+    "./img/img-cabañas-desde-afuera.jpg",
+    "./img/img-cabañas-vista-de-la-entrada-al-fondo.jpg",
+    "./img/img-cochera.jpg",
+    "./img/img-dormitorio-cama-dos-plazas.jpg",
+    "./img/img-dormitorio-tres-camas.jpg",
+    "./img/img-cocina.jpg",
+    "./img/img-comedor-cocina-con-tele.jpg",
+    "./img/img-pileta.jpg"
+];
 
-// Abre el modal y carga la imagen seleccionada
-function openModal(img) {
-    let modal = document.getElementById("imageModal");
-    let modalImg = document.getElementById("modalImage");
+let currentIndex = 0;
+const mainImage = document.getElementById("mainImage");
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
 
-    // Obtener todas las imágenes de la galería
-    images = Array.from(document.querySelectorAll(".gallery img"));
-    currentIndex = images.indexOf(img); // Guardamos el índice de la imagen clickeada
+// Función para actualizar la imagen en el slider
+function updateImage() {
+    mainImage.src = images[currentIndex];
+}
 
+function openModal() {
     modal.classList.remove("oculto");
-    modalImg.src = img.src;
+    modalImg.src = images[currentIndex];
 }
 
-// Cierra el modal
 function closeModal() {
-    document.getElementById("imageModal").classList.add("oculto");
+    modal.classList.add("oculto");
 }
 
-// Cambia la imagen al hacer clic en "Anterior" o "Siguiente"
-function changeImage(direction) {
-    currentIndex += direction; // Suma o resta 1 al índice
+document.addEventListener("keydown", function (event) {
+    if (!modal.classList.contains("oculto")) {
+        if (event.key === "ArrowLeft") {
+            changeImage(-1);
+        } else if (event.key === "ArrowRight") {
+            changeImage(1);
+        } else if (event.key === "Escape") {
+            closeModal();
+        }
+    }
+});
 
-    // Si se sale del rango, vuelve al inicio o al final
+function changeImage(direction) {
+    currentIndex += direction;
+
     if (currentIndex < 0) {
         currentIndex = images.length - 1;
     } else if (currentIndex >= images.length) {
         currentIndex = 0;
     }
 
-    // Actualiza la imagen en el modal
-    document.getElementById("modalImage").src = images[currentIndex].src;
+    updateImage();
+    modalImg.src = images[currentIndex];
 }
 
-// Cierra el modal al hacer clic fuera de la imagen
-document.getElementById("imageModal").addEventListener("click", function (e) {
+modal.addEventListener("click", function (e) {
     if (e.target.id === "imageModal") {
         closeModal();
     }
 });
+
+updateImage();
 
 const form = document.getElementById('reservaForm');
 

@@ -57,7 +57,7 @@
             <!-- Info Reserva -->
             <div class="contact-info">
                 <span><ion-icon name="call-outline"></ion-icon>351 73-70866</span>
-                <button class="btn-reserva"><a href="#contacto" class="scroll-link">Reservar</a></button>
+                <button class="btn-reserva"><a href="#contacto" class="scroll-link">Reservar Ahora</a></button>
             </div>
             <!-- Menu hamburguesa -->
             <div class="menu-toggle">
@@ -74,7 +74,8 @@
                 <div class="hero-text">
                     <h1>Complejo de Guadalupe</h1>
                     <p>Un lugar para disfrutar y relajarse.</p>
-                    <button class="btn-reserva fadeInUp"><a href="#contacto" class="scroll-link">Reservar</a></button>
+                    <button class="btn-reserva fadeInUp"><a href="#contacto" class="scroll-link">Reservar
+                            Ahora</a></button>
                 </div>
             </div>
             <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
@@ -94,7 +95,7 @@
                 <div class="service-card hidden">
                     <img src="./icons/wifi-3d.png" alt="icono de wifi" class="img-services">
                     <h3>WiFi</h3>
-                    <p>Disponemos de Wi-Fi de <b>alta calidad</b>.</p>
+                    <p>Disponemos de Wi-Fi de <b>alta calidad</b> en cada cabaña.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/piscina.png" alt="icono de piscina" class="img-services">
@@ -105,7 +106,7 @@
                     <img src="./icons/cama.png" alt="icono de piscina" class="img-services">
                     <h3>Habitaciones</h3>
                     <p>Cada cabaña cuenta con <b>dos habitaciones</b>: una con cama matrimonial y otra con tres
-                        individuales.</p>
+                        camas individuales.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/aire-acondicionado.png" alt="icono de aire acondicionado" class="img-services">
@@ -134,7 +135,7 @@
                 <div class="service-card hidden">
                     <img src="./icons/cochera.png" alt="icono de una cochera" class="img-services">
                     <h3>Cochera</h3>
-                    <p>Garaje privado y techado.</p>
+                    <p>Cada cabaña cuenta con un garaje techado y privado.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/parrilla-de-ladrillo.png" alt="icono de una persona con un asador"
@@ -145,43 +146,33 @@
             </div>
         </section>
         <!-- Galeria -->
-        <section class="gallery" id="galeria">
-            <div class="grid">
-                <img src="./img/img-cabañas-desde-afuera.jpg" alt="Exterior de la cabaña" onclick="openModal(this)"
-                    loading="lazy">
-                <img src="./img/img-cabañas-vista-de-la-entrada-al-fondo.jpg" alt="Todas las cabañas juntas"
-                    onclick="openModal(this)" loading="lazy">
-                <img src="./img/img-cochera.jpg" alt="Cochera y Asador de la cabaña" onclick="openModal(this)"
-                    loading="lazy">
-                <img src="./img/img-dormitorio-cama-dos-plazas.jpg" alt="Habitación con cama de dos plazas"
-                    onclick="openModal(this)" loading="lazy">
-                <img src="./img/img-dormitorio-tres-camas.jpg" alt="Habitación con tres camas" onclick="openModal(this)"
-                    loading="lazy">
-                <img src="./img/img-cocina.jpg" alt="Cocina equipada" onclick="openModal(this)" loading="lazy">
-                <img src="./img/img-comedor-cocina-con-tele.jpg" alt="Comedor - Cocina con TV" onclick="openModal(this)"
-                    loading="lazy">
-                <img src="./img/img-interior-baño.jpg" alt="Baño" onclick="openModal(this)" loading="lazy">
-                <img src="./img/img-pileta.jpg" alt="Pileta con reposeras a los costados" onclick="openModal(this)"
-                    loading="lazy">
+        <section class="gallery">
+            <div class="slider">
+                <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn">❮</button>
+                <img id="mainImage" onclick="openModal()" alt="Imagen principal">
+                <button onclick="changeImage(1)" class="nav-btn" id="nextBtn">❯</button>
             </div>
         </section>
+
+        <!-- Modal -->
         <div id="imageModal" class="modal oculto">
             <span class="close" onclick="closeModal()">&times;</span>
             <img class="modal-content" id="modalImage">
-
-            <button id="prevBtn" class="nav-btn" onclick="changeImage(-1)">&#10094;</button>
-            <button id="nextBtn" class="nav-btn" onclick="changeImage(1)">&#10095;</button>
+            <button class="nav-btn" id="prevModalBtn" onclick="changeImage(-1)">❮</button>
+            <button class="nav-btn" id="nextModalBtn" onclick="changeImage(1)">❯</button>
         </div>
+
         <!-- Acerca de Villa de Soto -->
         <section class="acerca-de-section" id="acerca-de">
             <div class="order-heading">
                 <h2 class="heading-subtitle animate" data-animation="fade-down">Sobre Villa de Soto</h2>
-                <p class="descripcion-pueblo animate" data-animation="fade-up" data-delay="200">Descubre los lugares más
-                    emblemáticos y disfruta de lo
-                    que el <span class="important-bold">Oasis del
-                        Noroeste Cordobés</span> tiene
-                    para
-                    ofrecer.</p>
+                <p class="descripcion-pueblo animate" data-animation="fade-up" data-delay="200">
+                    Descubre los lugares más emblemáticos y vive la esencia de <span class="important-bold">Villa de
+                        Soto</span>,
+                    el <span class="important-bold">Oasis del Noroeste Cordobés</span>, con sus festivales, ferias y
+                    celebraciones
+                    que reúnen a la comunidad en cada temporada.
+                </p>
             </div>
             <div class="info-turistica animate" data-animation="fade-up" data-delay="400">
                 <ion-icon name="information-circle-outline"></ion-icon>
@@ -202,7 +193,6 @@
                             cada 18 de agosto.</p>
                     </div>
                 </div>
-
                 <div class="lugar-turistico animate" data-animation="fade-up" data-delay="800">
                     <img src="./img/ollita-la-toma.jpg" alt="El Balneario La Toma">
                     <div class="order__content-turistico">
@@ -211,7 +201,6 @@
                             relax en verano.</p>
                     </div>
                 </div>
-
                 <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1000">
                     <img src="./img/plaza-vista-de-arriba.jpg" alt="La Plaza de Villa de Soto">
                     <div class="order__content-turistico">
@@ -220,7 +209,62 @@
                             momento con amigos y familia.</p>
                     </div>
                 </div>
+
+                <!-- Fesstividades -->
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1200">
+                    <img src="./img-events/Festival-de-la-Serenata.jpg"
+                        alt="El Festival de la Serenata es un evento anual en Villa de Soto que celebra la tradición y la música, destacando el patrimonio cultural local en un entorno natural.">
+                    <div class="order__content-turistico">
+                        <h3>Festival de la Serenata</h3>
+                        <p>Es uno de los acontecimientos más esperados por los habitantes de nuestra
+                            ciudad y por
+                            aquellos que nos visitan, en el mismo se busca conjugar tradición, música y comidas
+                            típicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1400">
+                    <img src="./img-events/Paseo-de-los-Artesanos.jpg" alt="Paseo de los artesanos en plaza San Roque">
+                    <div class="order__content-turistico">
+                        <h3>Paseo de los Artesanos</h3>
+                        <p>Feria artesanal donde artesanos locales exhiben y venden creaciones únicas en un
+                            ambiente cultural y acogedor.</p>
+                    </div>
+                </div>
+
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1600">
+                    <img src="./img-events/Fiesta-Cervecera.jpg"
+                        alt="Fiesta de la cerveza y food trucks en un marco perfecto para reunirnos, compartir y celebrar.">
+                    <div class="order__content-turistico">
+                        <h3>Fiesta Cervecera</h3>
+                        <p>Un evento para disfrutar de cervezas artesanales, gastronomía y buena música en un
+                            ambiente
+                            festivo.</p>
+                    </div>
+                </div>
+
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1800">
+                    <img src="./img-events/Carnavales.jpg"
+                        alt="Jornada inolvidable llena de color, música y alegría. Las comparsas deslumbraron con su energía, las bandas musicales hicieron vibrar al público, y los foodtrucks, puestos de ventas y artesanos ofrecieron una gran variedad de propuestas para disfrutar.">
+                    <div class="order__content-turistico">
+                        <h3>Carnaval del Pueblo</h3>
+                        <p>Desfiles coloridos con comparsas, música y fiesta en la plaza San Roque.</p>
+                    </div>
+                </div>
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="2000">
+                    <img src="./img-events/Sendero-de-la-Cruz.jpg"
+                        alt="Sendero de la Cruz en Villa de Soto, ubicado en el Balneario La Toma">
+                    <div class="order__content-turistico">
+                        <h3>Sendero de la Cruz</h3>
+                        <p>Este sendero ofrece a los visitantes la oportunidad de realizar una caminata que culmina en
+                            una cruz situada en un punto
+                            elevado, desde donde se pueden apreciar vistas panorámicas imperdibles de la región.</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
         </section>
         <!-- Contacto -->
         <section class="container-contacto" id="contacto">
@@ -287,7 +331,7 @@
                         <textarea id="mensaje" rows="3" placeholder="Deja tú mensaje..." maxlength="250"></textarea>
                         <p id="contador">250 caracteres restantes</p>
 
-                        <button type="submit" id="button">Reservar</button>
+                        <button type="submit" id="button">Reservar Ahora</button>
                         <p id="error" class="error"></p>
                     </form>
                 </div>
