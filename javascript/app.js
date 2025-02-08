@@ -41,8 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
 /* Intersection Observer de los servicios*/
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -136,14 +134,14 @@ function addAnimation(element, animation = 'fade-up', delay = 0) {
 }
 
 let images = [
-    "./img/img-cabañas-desde-afuera.jpg",
-    "./img/img-cabañas-vista-de-la-entrada-al-fondo.jpg",
-    "./img/img-cochera.jpg",
-    "./img/img-dormitorio-cama-dos-plazas.jpg",
-    "./img/img-dormitorio-tres-camas.jpg",
-    "./img/img-cocina.jpg",
-    "./img/img-comedor-cocina-con-tele.jpg",
-    "./img/img-pileta.jpg"
+    "./img/img-cabañas-desde-afuera.webp",
+    "./img/img-cabañas-vista-de-la-entrada-al-fondo.webp",
+    "./img/img-cochera.webp",
+    "./img/img-dormitorio-cama-dos-plazas.webp",
+    "./img/img-dormitorio-tres-camas.webp",
+    "./img/img-cocina.webp",
+    "./img/img-comedor-cocina-con-tele.webp",
+    "./img/img-pileta.webp"
 ];
 
 let currentIndex = 0;
@@ -151,7 +149,6 @@ const mainImage = document.getElementById("mainImage");
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImage");
 
-// Función para actualizar la imagen en el slider
 function updateImage() {
     mainImage.src = images[currentIndex];
 }
@@ -200,11 +197,9 @@ updateImage();
 
 const form = document.getElementById('reservaForm');
 
-// Escucha el evento de envío del formulario
 form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+    e.preventDefault();
 
-    // Obtén los valores del formulario
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const telefono = document.getElementById('telefono').value;
@@ -213,7 +208,6 @@ form.addEventListener('submit', async (e) => {
     const personas = document.getElementById('personas').value;
     const mensaje = document.getElementById('mensaje').value;
 
-    // Función para mostrar errores en los inputs
     function mostrarError(input, mensaje) {
         input.style.border = "2px solid red";
 
@@ -229,28 +223,24 @@ form.addEventListener('submit', async (e) => {
         errorMensaje.textContent = mensaje;
     }
 
-    // Función para limpiar errores cuando el usuario corrige el input
     function limpiarError(input) {
-        input.style.border = "2px solid green"; // Cambia a verde cuando es correcto
+        input.style.border = "2px solid green";
         let errorMensaje = input.nextElementSibling;
         if (errorMensaje && errorMensaje.classList.contains("error-mensaje")) {
             errorMensaje.remove();
         }
     }
 
-    // Detectar cambios en los inputs y validar en tiempo real
     document.querySelectorAll("input").forEach(input => {
         input.addEventListener("input", () => {
             if (input.value.trim() !== "") {
-                input.style.border = "2px solid green"; // Verde cuando hay algo válido
+                input.style.border = "2px solid green";
             } else {
-                input.style.border = ""; // Volver al estado original si se borra
+                input.style.border = "";
             }
         });
     });
 
-
-    // Validación de correo electrónico
     const emailInput = document.getElementById("email");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value)) {
@@ -260,7 +250,6 @@ form.addEventListener('submit', async (e) => {
         limpiarError(emailInput);
     }
 
-    // Validación de teléfono
     const telefonoInput = document.getElementById("telefono");
     const telefonoRegex = /^\d{10}$/;
     if (telefonoInput.value && !telefonoRegex.test(telefonoInput.value)) {
@@ -270,7 +259,6 @@ form.addEventListener('submit', async (e) => {
         limpiarError(telefonoInput);
     }
 
-    // Validación de fechas
     const fechaEntradaInput = document.getElementById("fechaEntrada");
     const fechaSalidaInput = document.getElementById("fechaSalida");
     if (new Date(fechaEntradaInput.value) >= new Date(fechaSalidaInput.value)) {
@@ -281,7 +269,6 @@ form.addEventListener('submit', async (e) => {
     }
 
     try {
-        // Guarda los datos en Firestore
         await addDoc(collection(db, 'reservas'), {
             nombre: nombre,
             email: email,
@@ -293,7 +280,6 @@ form.addEventListener('submit', async (e) => {
             timestamp: Timestamp.now()
         });
 
-        // Envía el correo electrónico usando EmailJS
         const templateParams = {
             nombre: nombre,
             email: email,
@@ -363,7 +349,6 @@ form.addEventListener('submit', async (e) => {
         console.error("Error al enviar la reserva: ", error);
     }
 });
-
 
 const textarea = document.getElementById("mensaje");
 const contador = document.getElementById("contador");
