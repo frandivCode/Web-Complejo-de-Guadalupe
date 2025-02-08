@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links a");
     const body = document.body;
 
     menuToggle.addEventListener("click", () => {
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Cerrar el menú al hacer clic fuera de él
     document.addEventListener("click", (event) => {
         if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
             navLinks.classList.remove("active");
@@ -21,7 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
             body.classList.remove("no-scroll");
         }
     });
+
+    // Cerrar el menú y permitir la redirección al hacer clic en un enlace
+    navItems.forEach(item => {
+        item.addEventListener("click", (event) => {
+            event.preventDefault(); // Evita el comportamiento predeterminado
+            const targetId = item.getAttribute("href"); // Obtiene el destino del enlace
+
+            navLinks.classList.remove("active");
+            menuToggle.classList.remove("active");
+            body.classList.remove("no-scroll");
+
+            setTimeout(() => {
+                window.location.href = targetId; // Redirige a la sección después de cerrar la nav
+            }, 200); // Agrega un pequeño retraso para que se note la animación
+        });
+    });
 });
+
+
 
 /* Intersection Observer de los servicios*/
 const observer = new IntersectionObserver((entries) => {

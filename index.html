@@ -2,16 +2,39 @@
 <html lang="es">
 
 <head>
+    <title>Complejo Cabañas de Guadalupe - Villa de Soto</title>
+    <meta name="description"
+        content="Descubre Complejo Guadalupe en Villa de Soto, Córdoba. Cabañas acogedoras junto al río, ideales para el descanso y la aventura. ¡Reserva hoy!">
+    <meta name="keywords"
+        content="cabañas, alojamiento, turismo, Villa de Soto, Córdoba, naturaleza, descanso, río Villa de Soto, La Toma">
+    <meta name="author" content="Complejo Guadalupe">
+    <meta name="robots" content="index, follow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/icon-pestaña.png" type="image/png">
+
+    <!-- Open Graph (Facebook, WhatsApp) -->
+    <meta property="og:title" content="Complejo Guadalupe - Cabañas en Villa de Soto">
+    <meta property="og:description"
+        content="Disfruta de una estadía única en nuestras cabañas en Villa de Soto, Córdoba. Un entorno natural perfecto para relajarte.">
+    <meta property="og:site_name" content="Complejo Guadalupe">
+    <meta property="og:url" content="https://complejoguadalupe.netlify.app/">
+    <meta property="og:image" content="https://i.imgur.com/QGIC2cz.jpeg">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complejo Guadalupe - Cabañas en Villa de Soto">
+    <meta name="twitter:description"
+        content="Cabañas acogedoras en Villa de Soto, Córdoba. Naturaleza, descanso y aventura te esperan.">
+    <meta name="twitter:image" content="https://i.imgur.com/QGIC2cz.jpeg">
+
+    <link rel="icon" href="./img/logo-imgur.jpg" type="image/jpg">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script>
         emailjs.init('Esfk6SMNHFs8Za8x1');
     </script>
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Complejo Cabañas de Guadalupe</title>
 </head>
 
 <body>
@@ -46,12 +69,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Reserva Mobile -->
-                    <div class="container-reserva">
-                        <div class="linea-divisora"></div>
-                        <button class="btn-reserva-mobile"><a href="#contacto" class="scroll-link">Reservar
-                                Ahora</a></button>
-                    </div>
                 </ul>
             </nav>
             <!-- Info Reserva -->
@@ -73,7 +90,8 @@
             <div class="container-hero">
                 <div class="hero-text">
                     <h1>Complejo de Guadalupe</h1>
-                    <p>Un lugar para disfrutar y relajarse.</p>
+                    <p>Relájate en nuestras cabañas, reserva tu lugar
+                        ahora.</p>
                     <button class="btn-reserva fadeInUp"><a href="#contacto" class="scroll-link">Reservar
                             Ahora</a></button>
                 </div>
@@ -146,7 +164,7 @@
             </div>
         </section>
         <!-- Galeria -->
-        <section class="gallery">
+        <section class="gallery" id="galeria">
             <div class="slider">
                 <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn">❮</button>
                 <img id="mainImage" onclick="openModal()" alt="Imagen principal">
@@ -185,7 +203,7 @@
             <!-- Lugares turísticos -->
             <div class="lugares-turisticos-grid">
                 <div class="lugar-turistico animate" data-animation="fade-up" data-delay="600">
-                    <img src="./img/san-roque.jpg" alt="La Iglesia de Villa de Soto">
+                    <img src="./img/san-roque.jpg" loading="lazy" alt="La Iglesia de Villa de Soto">
                     <div class="order__content-turistico">
                         <h3>Santuario San Roque</h3>
                         <p>Destaca su Parroquia, centro de la Fiesta Patronal en honor a San Roque, que convoca a miles
@@ -193,16 +211,16 @@
                             cada 18 de agosto.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="800">
-                    <img src="./img/ollita-la-toma.jpg" alt="El Balneario La Toma">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="700">
+                    <img src="./img/ollita-la-toma.jpg" loading="lazy" alt="El Balneario La Toma">
                     <div class="order__content-turistico">
                         <h3>La Toma</h3>
                         <p>Balneario natural con ollas, cascadas y playitas de arena fina, ideal para el descanso y el
                             relax en verano.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1000">
-                    <img src="./img/plaza-vista-de-arriba.jpg" alt="La Plaza de Villa de Soto">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="800">
+                    <img src="./img/plaza-vista-de-arriba.jpg" loading="lazy" alt="La Plaza de Villa de Soto">
                     <div class="order__content-turistico">
                         <h3>La Plaza</h3>
                         <p>Plaza principal rodeada de árboles y locales gastronómicos, perfecta para disfrutar de un
@@ -211,8 +229,8 @@
                 </div>
 
                 <!-- Fesstividades -->
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1200">
-                    <img src="./img-events/Festival-de-la-Serenata.jpg"
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="900">
+                    <img src="./img-events/Festival-de-la-Serenata.jpg" loading="lazy"
                         alt="El Festival de la Serenata es un evento anual en Villa de Soto que celebra la tradición y la música, destacando el patrimonio cultural local en un entorno natural.">
                     <div class="order__content-turistico">
                         <h3>Festival de la Serenata</h3>
@@ -224,8 +242,9 @@
                     </div>
                 </div>
 
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1400">
-                    <img src="./img-events/Paseo-de-los-Artesanos.jpg" alt="Paseo de los artesanos en plaza San Roque">
+                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1000">
+                    <img src="./img-events/Paseo-de-los-Artesanos.jpg" loading="lazy"
+                        alt="Paseo de los artesanos en plaza San Roque">
                     <div class="order__content-turistico">
                         <h3>Paseo de los Artesanos</h3>
                         <p>Feria artesanal donde artesanos locales exhiben y venden creaciones únicas en un
@@ -233,8 +252,8 @@
                     </div>
                 </div>
 
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1600">
-                    <img src="./img-events/Fiesta-Cervecera.jpg"
+                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1100">
+                    <img src="./img-events/Fiesta-Cervecera.jpg" loading="lazy"
                         alt="Fiesta de la cerveza y food trucks en un marco perfecto para reunirnos, compartir y celebrar.">
                     <div class="order__content-turistico">
                         <h3>Fiesta Cervecera</h3>
@@ -244,16 +263,16 @@
                     </div>
                 </div>
 
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1800">
-                    <img src="./img-events/Carnavales.jpg"
+                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1200">
+                    <img src="./img-events/Carnavales.jpg" loading="lazy"
                         alt="Jornada inolvidable llena de color, música y alegría. Las comparsas deslumbraron con su energía, las bandas musicales hicieron vibrar al público, y los foodtrucks, puestos de ventas y artesanos ofrecieron una gran variedad de propuestas para disfrutar.">
                     <div class="order__content-turistico">
                         <h3>Carnaval del Pueblo</h3>
                         <p>Desfiles coloridos con comparsas, música y fiesta en la plaza San Roque.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="2000">
-                    <img src="./img-events/Sendero-de-la-Cruz.jpg"
+                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1300">
+                    <img src="./img-events/Sendero-de-la-Cruz.jpg" loading="lazy"
                         alt="Sendero de la Cruz en Villa de Soto, ubicado en el Balneario La Toma">
                     <div class="order__content-turistico">
                         <h3>Sendero de la Cruz</h3>
@@ -299,8 +318,7 @@
                     <div class="map animate" data-animation="fade-up" data-delay="1500">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5132.015527149489!2d-64.98455628052666!3d-30.85280972378706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x942dc9e3d44e9ba7%3A0xb57d6390efac65fe!2sComplejo%20Caba%C3%B1as%20Guadalupe!5e0!3m2!1ses-419!2sar!4v1738673018447!5m2!1ses-419!2sar"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
+                            style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>

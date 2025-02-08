@@ -282,34 +282,6 @@ header {
     background-color: #68a0c8;
 }
 
-.linea-divisora {
-    display: none;
-    width: 100%;
-    height: 1px;
-    background-color: #ffffff;
-}
-
-/* === boton reserva vista mobile === */
-.btn-reserva-mobile {
-    display: none;
-    text-align: center;
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    background-color: #c49a6c;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    transition: background 0.3s ease-in;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.btn-reserva-mobile:hover {
-    background-color: #c08347;
-}
-
 /* === Icono del menu hamburguesa ===*/
 .menu-toggle {
     display: none;
@@ -400,8 +372,17 @@ header {
     margin: 0 auto;
 }
 
+.hero-text {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .hero-text h1 {
-    font-size: clamp(2rem, 8vw, 5rem);
+    font-size: clamp(2rem, 8vw, 4rem);
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.5s forwards;
@@ -409,13 +390,16 @@ header {
 }
 
 .hero-text p {
-    font-size: clamp(1rem, 4vw, 1.6rem);
+    width: 100%;
+    font-size: clamp(1rem, 4vw, 1.4rem);
     margin-bottom: 30px;
     animation: fadeInUp 1s ease-out 1s forwards;
     font-weight: 600;
-    color: #e3e3e3;
+    color: #eeeeee;
     opacity: 0;
     font-style: italic;
+    max-width: 600px;
+    line-height: 1.5;
 }
 
 .fadeInUp {
@@ -522,18 +506,18 @@ main {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 10px;
+    gap: 15px;
     height: 100%;
 }
 
 .descripcion-services {
-    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.9rem, 3.5vw, 1.3rem);
     color: #6F4E37;
     max-width: 53rem;
     margin: 15px 0;
     padding: 0 10px;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* Animaciones de entrada en las Cards*/
@@ -626,9 +610,9 @@ main {
 }
 
 .modal-content {
-    max-width: 100%;
-    max-height: 90%;
-    object-fit: contain;
+    max-width: 95%;
+    max-height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     cursor: pointer;
 }
@@ -651,7 +635,7 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     color: white;
     border: none;
     font-size: 24px;
@@ -674,11 +658,11 @@ main {
 }
 
 #prevModalBtn {
-    left: 150px;
+    left: 20px;
 }
 
 #nextModalBtn {
-    right: 150px;
+    right: 20px;
 }
 
 /* === Acerca de Section === */
@@ -690,7 +674,7 @@ main {
 }
 
 .descripcion-pueblo {
-    font-size: clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.9rem, 3.5vw, 1.3rem);
     color: #6F4E37;
     max-width: 53rem;
     margin: 10px auto;
@@ -703,7 +687,7 @@ main {
 
 /* Info turistica */
 .info-turistica {
-    background-color: #5c8fb4;
+    background-color: #33863C;
     color: #ffffff;
     padding: 1.3rem;
     border-radius: 0.5rem;
@@ -1116,6 +1100,10 @@ input.error {
     .contact-info {
         display: none;
     }
+
+    .acerca-de-section {
+        padding: 1rem;
+    }
 }
 
 @media (max-width: 762px) {
@@ -1188,20 +1176,12 @@ input.error {
         width: 50px;
     }
 
-    .modal-content {
-        max-width: 95%;
-    }
-
     .info-turistica {
         width: 95%;
     }
 
     .lugares-turisticos-grid {
         width: 95%;
-    }
-
-    .acerca-de-section {
-        padding: .5rem;
     }
 
     .order-heading {
@@ -1269,7 +1249,7 @@ input.error {
     }
 
     .acerca-de-section {
-        padding: 0rem;
+        padding: .5rem;
     }
 
     .order__content-turistico {
