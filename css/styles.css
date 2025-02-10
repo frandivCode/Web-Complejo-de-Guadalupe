@@ -199,7 +199,7 @@ header {
     overflow: hidden;
     position: fixed;
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
 }
 
 .nav-links li {
@@ -640,6 +640,28 @@ main {
 .animate-observer.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+.cabañas-disponibles {
+    width: 100%;
+    margin: 50px 0;
+    padding: 50px 20px;
+    background: url(../img/blob-cta.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.superposition {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 /* === Carrousel de Imagenes === */
@@ -1228,36 +1250,19 @@ input.error {
 }
 
 /* Responsive */
-@media (max-width:1190px) {
-    .container-info-nosotros {
-        flex-direction: column-reverse;
-        align-items: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
+@media (max-width:1300px) {
+    .container-nav-mobile {
         display: flex;
-    }
-
-    .cabañas-info {
-        display: flex;
-    }
-
-    .nav-links li a:hover::after {
-        width: 0;
-    }
-
-    .nav-links {
         flex-direction: column;
         align-items: start;
+        justify-content: center;
         position: absolute;
         top: 110px;
         right: 0;
         left: 0;
         background: #f5f5f5;
         width: 100%;
-        height: calc(100vh - 110px);
+        height: calc(100dvh - 110px);
         text-align: center;
         padding: clamp(20px, 5vw, 50px);
         transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -1266,13 +1271,65 @@ input.error {
         opacity: 0;
     }
 
-    .nav-links li a {
+    .container-nav-mobile li a {
         color: #000000;
     }
 
-    .nav-links.active {
+    .container-nav-mobile.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .contact-info {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .cabañas-info {
+        display: flex;
+    }
+
+    .linea-divisora {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .container-reserva {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .btn-reserva-mobile {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width:1190px) {
+    .container-info-nosotros {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links li a:hover::after {
+        width: 0;
     }
 
     .services-container {
@@ -1299,15 +1356,6 @@ input.error {
     .list__links {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .icon-wpp {
-        bottom: 80px;
-        right: 15px;
-    }
-
-    .contact-info {
-        display: none;
     }
 
     .acerca-de-section {
@@ -1352,41 +1400,8 @@ input.error {
     }
 }
 
-@media (max-width: 762px) {
-    .linea-divisora {
-        display: block;
-        margin-bottom: 30px;
-    }
-
-    .container-reserva {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
-    }
-
-    .btn-reserva-mobile {
-        display: flex;
-        width: 100%;
-        max-width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-}
 
 @media (max-width:480px) {
-    .nav-links {
-        top: 110px;
-        height: calc(100vh - 110px);
-        gap: 30px;
-    }
-
-    .cabañas-info {
-        margin: 0;
-    }
-
     .sub-heading {
         font-size: 1.2rem;
     }
@@ -1395,7 +1410,7 @@ input.error {
         font-size: 14px;
     }
 
-    .nav-links li a {
+    .container-nav-mobile li a {
         font-size: 1.1rem;
     }
 
@@ -1476,13 +1491,11 @@ input.error {
         width: 70px;
     }
 
-    .nav-links {
-        top: 91px;
-        height: calc(100vh - 91px);
+    .container-nav-mobile {
         gap: 20px;
     }
 
-    .nav-links li a {
+    .container-nav-mobile li a {
         font-size: 1rem;
     }
 

@@ -32,20 +32,23 @@
 
 <body>
     <div class="container__icon-wpp">
-        <a href="https://wa.me/5493549592986?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"><ion-icon
-                name="logo-whatsapp" class="icon-wpp pulse"></ion-icon></a>
+        <a href="https://wa.me/3517370866?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"><ion-icon
+                name="logo-whatsapp" class="icon-wpp pulse"
+                aria-label="Chatea por WhatsApp con nosotros por si tienes alguna consulta"></ion-icon></a>
     </div>
     <header>
         <div class="container-header">
             <img src="./img/logo.webp" alt="logo de la página" class="logo" id="inicio">
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
-                    <li><a href="#servicios" class="scroll-link">Servicios</a></li>
-                    <li><a href="#acerca-de" class="scroll-link">Acerca de</a></li>
-                    <li><a href="#galeria" class="scroll-link">Galería</a></li>
-                    <li><a href="#testimonios" class="scroll-link">Testimonios</a></li>
-                    <li><a href="#contacto" class="scroll-link">Contacto</a></li>
+                <div class="container-nav-mobile">
+                    <ul class="nav-links">
+                        <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
+                        <li><a href="#servicios" class="scroll-link">Servicios</a></li>
+                        <li><a href="#acerca-de" class="scroll-link">Acerca de</a></li>
+                        <li><a href="#galeria" class="scroll-link">Galería</a></li>
+                        <li><a href="#testimonios" class="scroll-link">Testimonios</a></li>
+                        <li><a href="#contacto" class="scroll-link">Contacto</a></li>
+                    </ul>
                     <div class="cabañas-info">
                         <div class="address">
                             <p class="sub-heading">Ubicación</p>
@@ -67,14 +70,13 @@
                         <button class="btn-reserva-mobile"><a href="#contacto" class="scroll-link">Reservar
                                 Ahora</a></button>
                     </div>
-                </ul>
+                </div>
             </nav>
             <div class="contact-info">
-                <a href="https://wa.me/5493549592986?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"
+                <a href="https://wa.me/3517370866?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"
                     class="btn-reserva">
                     Contáctanos<ion-icon name="logo-whatsapp"></ion-icon>
                 </a>
-
             </div>
             <div class="menu-toggle">
                 <span></span>
@@ -197,6 +199,16 @@
                 </div>
             </div>
         </section>
+        <section class="cabañas-disponibles">
+            <div class="superposition">
+                <h2 class="heading-subtitle animate h2-black" data-animation="fade-up">Cabañas Disponibles</h2>
+                <p class="mensaje animate" data-animation="fade-up">Descanso que inspira, naturaleza que abraza.</p>
+                <button class="btn-reserva scroll-link animate" data-target="#contacto"
+                    data-animation="fade-down">Contactarse<ion-icon name="arrow-down-outline"></ion-icon>
+                </button>
+            </div>
+            </div>
+        </section>
         <section class="gallery" id="galeria">
             <div class="order-heading">
                 <h2 class="heading-subtitle animate" data-animation="fade-down">Nuestra Galería</h2>
@@ -205,10 +217,11 @@
                     para el descanso y la desconexión, en perfecta armonía con la naturaleza.</p>
             </div>
             <div class="slider">
-                <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn"><ion-icon
-                        name="arrow-back-outline"></ion-icon></button>
+                <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn"
+                    aria-label="Anterior Imagen de la Cabaña"><ion-icon name="arrow-back-outline"></ion-icon></button>
                 <img id="mainImage" onclick="openModal()" alt="Carrousel de imagenes de las cabañas">
-                <button onclick="changeImage(1)" class="nav-btn" id="nextBtn"><ion-icon
+                <button onclick="changeImage(1)" class="nav-btn" id="nextBtn"
+                    aria-label="Siguiente Imagen de la Cabaña"><ion-icon
                         name="arrow-forward-outline"></ion-icon></button>
             </div>
         </section>
@@ -240,7 +253,7 @@
                     capital, y a 900 km de Buenos Aires.</p>
             </div>
             <div class="lugares-turisticos-grid">
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="600">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="500">
                     <img src="./img/san-roque.webp" loading="lazy" alt="La Iglesia de Villa de Soto">
                     <div class="order__content-turistico">
                         <h3>Santuario San Roque</h3>
@@ -249,7 +262,7 @@
                             cada 18 de agosto.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="700">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="600">
                     <img src="./img/ollita-la-toma.webp" loading="lazy" alt="El Balneario La Toma">
                     <div class="order__content-turistico">
                         <h3>La Toma</h3>
@@ -257,7 +270,7 @@
                             relax en verano.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="800">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="700">
                     <img src="./img/plaza-vista-de-arriba.webp" loading="lazy" alt="La Plaza de Villa de Soto">
                     <div class="order__content-turistico">
                         <h3>La Plaza</h3>
@@ -265,7 +278,7 @@
                             momento con amigos y familia.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="900">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="800">
                     <img src="./img-events/Festival-de-la-Serenata.webp" loading="lazy"
                         alt="El Festival de la Serenata es un evento anual en Villa de Soto que celebra la tradición y la música, destacando el patrimonio cultural local en un entorno natural.">
                     <div class="order__content-turistico">
@@ -277,7 +290,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1000">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="900">
                     <img src="./img-events/Paseo-de-los-Artesanos.webp" loading="lazy"
                         alt="Paseo de los artesanos en plaza San Roque">
                     <div class="order__content-turistico">
@@ -286,7 +299,7 @@
                             ambiente cultural y acogedor.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1100">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1000">
                     <img src="./img-events/Fiesta-Cervecera.webp" loading="lazy"
                         alt="Fiesta de la cerveza y food trucks en un marco perfecto para reunirnos, compartir y celebrar.">
                     <div class="order__content-turistico">
@@ -296,7 +309,7 @@
                             festivo.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1200">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1100">
                     <img src="./img-events/Carnavales.webp" loading="lazy"
                         alt="Jornada inolvidable llena de color, música y alegría. Las comparsas deslumbraron con su energía, las bandas musicales hicieron vibrar al público, y los foodtrucks, puestos de ventas y artesanos ofrecieron una gran variedad de propuestas para disfrutar.">
                     <div class="order__content-turistico">
@@ -304,7 +317,7 @@
                         <p>Desfiles coloridos con comparsas, música y fiesta en la plaza San Roque.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1300">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1200">
                     <img src="./img-events/Sendero-de-la-Cruz.webp" loading="lazy"
                         alt="Sendero de la Cruz en Villa de Soto, ubicado en el Balneario La Toma">
                     <div class="order__content-turistico">
@@ -322,7 +335,8 @@
                 <h2 class="heading-subtitle animate" data-animation="fade-down">Testimonios</h2>
             </div>
             <div class="testimonio-container">
-                <button id="prev" class="arrow"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                <button id="prev" class="arrow"><ion-icon name="arrow-back-outline"
+                        aria-label="Anterior Testimonio"></ion-icon></button>
                 <div class="testimonio">
                     <img src="" alt="Icono de personas que dieron su reseña sobre las cabañas en Google">
                     <h3 id="nombre"></h3>
@@ -331,7 +345,8 @@
                         "Fui con mi novia en agosto. Las cabañas son bellísimas, muy amplias y completas..."
                     </p>
                 </div>
-                <button id="next" class="arrow"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+                <button id="next" class="arrow"><ion-icon name="arrow-forward-outline"
+                        aria-label="Siguiente Testimonio"></ion-icon></button>
             </div>
             <div class="order-testimonio">
                 <p class="mensaje animate" data-animation="fade-down" data-delay="400">
@@ -339,7 +354,8 @@
                     del botón.
                 </p>
                 <a href="https://www.google.com/maps/place/Complejo+Caba%C3%B1as+Guadalupe/@-30.8492285,-64.9866349,17z/data=!3m1!4b1!4m6!3m5!1s0x942dc9e3d44e9ba7:0xb57d6390efac65fe!8m2!3d-30.8492285!4d-64.9866349!16s%2Fg%2F11j1_gw0px?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
-                    target="_blank" class="boton-reseña">Ver más reseñas<ion-icon name="logo-google"></ion-icon></a>
+                    target="_blank" class="boton-reseña animate" data-animation="fade-up" data-delay="600">Ver más
+                    reseñas<ion-icon name="logo-google"></ion-icon></a>
             </div>
         </section>
         <section class="container-contacto" id="contacto">
