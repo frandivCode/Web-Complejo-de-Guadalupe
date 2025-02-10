@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Cerrar el menú al hacer clic fuera de él
     document.addEventListener("click", (event) => {
         if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
             navLinks.classList.remove("active");
@@ -24,19 +23,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Cerrar el menú y permitir la redirección al hacer clic en un enlace
     navItems.forEach(item => {
         item.addEventListener("click", (event) => {
-            event.preventDefault(); // Evita el comportamiento predeterminado
-            const targetId = item.getAttribute("href"); // Obtiene el destino del enlace
+            event.preventDefault();
+            const targetId = item.getAttribute("href");
 
             navLinks.classList.remove("active");
             menuToggle.classList.remove("active");
             body.classList.remove("no-scroll");
 
             setTimeout(() => {
-                window.location.href = targetId; // Redirige a la sección después de cerrar la nav
-            }, 200); // Agrega un pequeño retraso para que se note la animación
+                window.location.href = targetId;
+            }, 200);
         });
     });
 });
@@ -53,7 +51,7 @@ const observer = new IntersectionObserver((entries) => {
 
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el, index) => {
-    el.style.transitionDelay = `${index * 0.15}s`;
+    el.style.transitionDelay = `${index * 0.10}s`;
     observer.observe(el);
 });
 
@@ -63,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.2
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -195,6 +193,7 @@ modal.addEventListener("click", function (e) {
 
 updateImage();
 
+emailjs.init('Esfk6SMNHFs8Za8x1');
 const form = document.getElementById('reservaForm');
 
 form.addEventListener('submit', async (e) => {
@@ -241,6 +240,14 @@ form.addEventListener('submit', async (e) => {
         });
     });
 
+    const personasInput = document.getElementById("personas");
+    if (personas < 1 || personas > 5) {
+        mostrarError(personasInput, "La cantidad de personas debe ser entre 1 y 5.");
+        return;
+    } else {
+        limpiarError(personasInput);
+    }
+
     const emailInput = document.getElementById("email");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailInput.value)) {
@@ -253,7 +260,7 @@ form.addEventListener('submit', async (e) => {
     const telefonoInput = document.getElementById("telefono");
     const telefonoRegex = /^\d{10}$/;
     if (telefonoInput.value && !telefonoRegex.test(telefonoInput.value)) {
-        mostrarError(telefonoInput, "Por favor, ingrese un número de teléfono válido (10 dígitos).");
+        mostrarError(telefonoInput, "Por favor, ingrese un número de teléfono válido de 10 digitos, sin signos.");
         return;
     } else {
         limpiarError(telefonoInput);
@@ -269,16 +276,8 @@ form.addEventListener('submit', async (e) => {
     }
 
     try {
-        await addDoc(collection(db, 'reservas'), {
-            nombre: nombre,
-            email: email,
-            telefono: telefono,
-            fechaEntrada: Timestamp.fromDate(new Date(fechaEntrada)),
-            fechaSalida: Timestamp.fromDate(new Date(fechaSalida)),
-            personas: personas,
-            mensaje: mensaje,
-            timestamp: Timestamp.now()
-        });
+        const button = document.querySelector("button[type='submit']");
+        button.textContent = 'Reservando...';
 
         const templateParams = {
             nombre: nombre,
@@ -289,11 +288,6 @@ form.addEventListener('submit', async (e) => {
             personas: personas,
             mensaje: mensaje
         };
-        const button = document.querySelector("button[type='submit']");
-        const form = document.getElementById("reservaForm");
-
-        button.textContent = 'Reservando...';
-
         const serviceID = 'service_ywbjn7q';
         const templateID = 'template_gwnkt1s';
 
@@ -312,13 +306,12 @@ form.addEventListener('submit', async (e) => {
                         borderRadius: "10px",
                         fontSize: "16px",
                         fontWeight: "600",
-                        fontFamily: "'Poppins', sans- serif"
+                        fontFamily: "'Poppins', sans-serif"
                     }
                 }).showToast();
 
                 console.log('Correo enviado:', response);
             })
-
             .catch(function (error) {
                 console.error('Error enviando el correo:', error);
 
@@ -340,12 +333,21 @@ form.addEventListener('submit', async (e) => {
             .finally(() => {
                 button.textContent = 'Reservar';
 
+                const inputs = document.querySelectorAll("input");
+                inputs.forEach(input => {
+                    input.style.border = "";
+                    let errorMensaje = input.nextElementSibling;
+                    if (errorMensaje && errorMensaje.classList.contains("error-mensaje")) {
+                        errorMensaje.remove();
+                    }
+                });
+
                 setTimeout(() => {
                     form.reset();
                 }, 2000);
             });
-        form.reset();
     } catch (error) {
+        button.textContent = 'Reservar Ahora';
         console.error("Error al enviar la reserva: ", error);
     }
 });
@@ -385,3 +387,66 @@ document.querySelectorAll('.scroll-link').forEach(link => {
 
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear;
+
+document.querySelectorAll('.scroll-link').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const target = document.querySelector(this.getAttribute('data-target'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+let imagenTestimonio = [
+    "./img/human-two.png"
+]
+
+const testimonios = [
+    {
+        nombre: "Sil Álvarez",
+        estrellas: 5,
+        comentario: "Un lugar hermoso. Fuimos en diciembre para recibir el Año Nuevo y quedamos encantados. Amé el entorno, las flores, las mariposas... Todo fue excelente. Sin duda, volveremos.",
+        imagen: "./img/human-one.png"
+    },
+    {
+        nombre: "Andres R",
+        estrellas: 5,
+        comentario: "Impecables y muy cómodas cabañas para alojarse y descansar, con un gusto excepcional e inmejorable trato de sus dueños. A pocos metros se encuentra el río con un bello paseo. Excelente relación precio-calidad.",
+        imagen: imagenTestimonio
+    },
+    {
+        nombre: "Laura Teresita Raimundo",
+        estrellas: 4,
+        comentario: "Muy agradable y funcional la cabaña. Con todos los servicios básicos, incluido cochera techada(importante si cae granizo). Graciela, quien nos recibió, muy amable!! Las fotos que están publicadas son exactas. Muestran tal cual son las cabañas.",
+        imagen: "./img/human-three.png"
+    }
+];
+
+let indice = 0;
+const nombre = document.getElementById("nombre");
+const estrellas = document.getElementById("estrellas");
+const comentario = document.getElementById("comentario");
+const imagen = document.querySelector(".testimonio img");
+
+function mostrarTestimonio() {
+    nombre.textContent = testimonios[indice].nombre;
+    comentario.textContent = `"${testimonios[indice].comentario}"`;
+    imagen.src = testimonios[indice].imagen;
+
+    estrellas.innerHTML = "";
+    for (let i = 0; i < testimonios[indice].estrellas; i++) {
+        estrellas.innerHTML += "★";
+    }
+}
+
+document.getElementById("prev").addEventListener("click", () => {
+    indice = (indice - 1 + testimonios.length) % testimonios.length;
+    mostrarTestimonio();
+});
+
+document.getElementById("next").addEventListener("click", () => {
+    indice = (indice + 1) % testimonios.length;
+    mostrarTestimonio();
+});
+
+mostrarTestimonio();

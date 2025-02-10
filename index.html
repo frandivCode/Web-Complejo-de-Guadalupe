@@ -25,26 +25,26 @@
     <meta name="twitter:image" content="https://i.imgur.com/QGIC2cz.jpeg">
 
     <link rel="icon" href="./img/logo-imgur.ico">
-    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <script defer>
-        emailjs.init('Esfk6SMNHFs8Za8x1');
-    </script>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <div class="container__icon-wpp">
-        <ion-icon name="logo-whatsapp" class="icon-wpp pulse"></ion-icon>
+        <a href="https://wa.me/5493549592986?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"><ion-icon
+                name="logo-whatsapp" class="icon-wpp pulse"></ion-icon></a>
     </div>
     <header>
         <div class="container-header">
             <img src="./img/logo.webp" alt="logo de la página" class="logo" id="inicio">
             <nav>
                 <ul class="nav-links">
+                    <li><a href="#nosotros" class="scroll-link">Nosotros</a></li>
                     <li><a href="#servicios" class="scroll-link">Servicios</a></li>
                     <li><a href="#acerca-de" class="scroll-link">Acerca de</a></li>
                     <li><a href="#galeria" class="scroll-link">Galería</a></li>
+                    <li><a href="#testimonios" class="scroll-link">Testimonios</a></li>
                     <li><a href="#contacto" class="scroll-link">Contacto</a></li>
                     <div class="cabañas-info">
                         <div class="address">
@@ -62,11 +62,19 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="container-reserva">
+                        <div class="linea-divisora"></div>
+                        <button class="btn-reserva-mobile"><a href="#contacto" class="scroll-link">Reservar
+                                Ahora</a></button>
+                    </div>
                 </ul>
             </nav>
             <div class="contact-info">
-                <span><ion-icon name="call-outline"></ion-icon>351 73-70866</span>
-                <button class="btn-reserva"><a href="#contacto" class="scroll-link">Reservar Ahora</a></button>
+                <a href="https://wa.me/5493549592986?text=Hola,%20quiero%20hacer%20una%20consulta!" target="_blank"
+                    class="btn-reserva">
+                    Contáctanos<ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+
             </div>
             <div class="menu-toggle">
                 <span></span>
@@ -79,14 +87,51 @@
         <section class="hero">
             <div class="container-hero">
                 <div class="hero-text">
-                    <h1>Complejo de Guadalupe</h1>
-                    <p>Relájate en nuestras cabañas, reserva tu lugar
-                        ahora.</p>
-                    <button class="btn-reserva fadeInUp"><a href="#contacto" class="scroll-link">Reservar
-                            Ahora</a></button>
+                    <span class="span-title">Complejo Guadalupe</span>
+                    <h1>Disfrutá y dejate llevar por la calma del río.</h1>
+                    <p>Descubrí nuestro complejo, un espacio tranquilo a solo 100 metros de la orilla. Te
+                        ofrecemos cinco cabañas
+                        privadas, totalmente equipadas, para que disfrutes con comodidad.</p>
+                    <button class="btn-reserva scroll-link" data-target="#nosotros">Saber más <ion-icon
+                            name="arrow-down-outline"></ion-icon>
+                    </button>
                 </div>
             </div>
             <ion-icon name="chevron-down-outline" class="arrow-down"></ion-icon>
+        </section>
+        <section class="sobre-nosotros" id="nosotros">
+            <div class="container-info-nosotros">
+                <img src="./img/img-nosotros.webp" alt="Cabañas de su vista lateral" loading="lazy"
+                    class="img-nosotros animate" data-animation="fade-left" data-delay="200">
+                <div class="order-content-nosotros">
+                    <div class="intro-content-nosotros">
+                        <p class="cabaña-text animate" data-animation="fade-up" data-delay="400">Complejo Guadalupe</p>
+                        <h2 class="heading-subtitle animate" data-animation="fade-up" data-delay="600">Las Cabañas</h2>
+                        <p class="slogan-nosotros animate" data-animation="fade-right" data-delay="700">Tu deseo de
+                            descansar, nuestro
+                            compromiso de brindarte una
+                            experiencia inolvidable.
+                        </p>
+                    </div>
+                    <div class="paragraphs-nosotros animate" data-animation="fade-up" data-delay="800">
+                        <p>
+                            Contamos
+                            con 5
+                            cabañas totalmente equipadas, pensadas para alojar hasta 5 huéspedes.</p>
+                        <p>A solo una cuadra del río y a seis del centro, la plaza principal y la
+                            iglesia, nuestra
+                            ubicación te
+                            ofrece el equilibrio perfecto entre tranquilidad y comodidad, sin perder la facilidad de
+                            ir
+                            al
+                            centro cuando lo desees.</p>
+                        <p>El Complejo Guadalupe ofrece una experiencia única en conexión con la
+                            naturaleza, disfrutando
+                            de la calidez de
+                            nuestras cabañas, donde la comodidad y el bienestar son nuestra prioridad.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="services-section" id="servicios">
             <div class="order-heading">
@@ -100,35 +145,35 @@
             </div>
             <div class="services-container">
                 <div class="service-card hidden">
-                    <img src="./icons/wifi-3d.webp" alt="icono de wi-fi" class="img-services">
-                    <h3>WiFi</h3>
+                    <img src="./icons/wifi.webp" alt="icono de wi-fi" class="img-services">
+                    <h2>WiFi</h2>
                     <p>Disponemos de Wi-Fi de <b>alta calidad</b> en cada cabaña.</p>
                 </div>
                 <div class="service-card hidden">
-                    <img src="./icons/piscina.webp" alt="icono de piscina" class="img-services">
-                    <h3>Pileta</h3>
-                    <p><b>Disfruta</b> de la pileta para refrescarte y compartir momentos inolvidables.</p>
-                </div>
-                <div class="service-card hidden">
-                    <img src="./icons/cama.webp" alt="icono de una cama" class="img-services">
-                    <h3>Habitaciones</h3>
-                    <p>Cada cabaña cuenta con <b>dos habitaciones</b>: una con cama matrimonial y otra con tres
-                        camas individuales.</p>
-                </div>
-                <div class="service-card hidden">
                     <img src="./icons/aire-acondicionado.webp" alt="icono de aire acondicionado" class="img-services">
-                    <h3>Aire Acondicionado</h3>
+                    <h2>Aire Acondicionado</h2>
                     <p>Aire acondicionado en todas las cabañas para un <b>descanso placentero</b>.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/television-inteligente.webp" alt="icono de una television smart"
                         class="img-services">
-                    <h3>TV por Cable</h3>
+                    <h2>TV por Cable</h2>
                     <p>LCD 32" con amplia <b>variedad</b> de canales.</p>
                 </div>
                 <div class="service-card hidden">
+                    <img src="./icons/piscina.webp" alt="icono de piscina" class="img-services">
+                    <h2>Pileta</h2>
+                    <p><b>Disfruta</b> de la pileta para refrescarte y compartir momentos inolvidables.</p>
+                </div>
+                <div class="service-card hidden">
+                    <img src="./icons/cama.webp" alt="icono de una cama" class="img-services">
+                    <h2>Habitaciones</h2>
+                    <p>Cada cabaña cuenta con <b>dos habitaciones</b>: una con cama matrimonial y otra con tres
+                        camas individuales.</p>
+                </div>
+                <div class="service-card hidden">
                     <img src="./icons/cocina.webp" alt="icono de una cocina completa" class="img-services">
-                    <h3>Cocina y Equipamiento</h3>
+                    <h2>Cocina y Equipamiento</h2>
                     <p>Totalmente <b>equipada</b> con horno, pava, heladera, termotanque eléctrico, utensilios de cocina
                         y elementos de
                         limpieza.</p>
@@ -136,34 +181,44 @@
                 <div class="service-card hidden">
                     <img src="./icons/servicio-de-habitaciones.webp"
                         alt="icono de una persona realizando el servicio de habitacion" class="img-services">
-                    <h3>Ropa de Cama</h3>
+                    <h2>Ropa de Cama</h2>
                     <p><b>Proveemos</b> sábanas y frazadas para garantizar tu comodidad durante la estadía.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/cochera.webp" alt="icono de una cochera" class="img-services">
-                    <h3>Cochera</h3>
+                    <h2>Cochera</h2>
                     <p>Cada cabaña cuenta con un garaje techado y privado.</p>
                 </div>
                 <div class="service-card hidden">
                     <img src="./icons/parrilla-de-ladrillo.webp" alt="icono de una persona en un asador"
                         class="img-services">
-                    <h3>Asador</h3>
+                    <h2>Asador</h2>
                     <p>Un asador ideal para compartir <b>momentos especiales</b> con familia y amigos.</p>
                 </div>
             </div>
         </section>
         <section class="gallery" id="galeria">
+            <div class="order-heading">
+                <h2 class="heading-subtitle animate" data-animation="fade-down">Nuestra Galería</h2>
+                <p class="descripcion-services animate" data-animation="fade-down" data-delay="400">Complejo Guadulupe,
+                    en Villa de Soto, Córdoba Argentina, un lugar pensado
+                    para el descanso y la desconexión, en perfecta armonía con la naturaleza.</p>
+            </div>
             <div class="slider">
-                <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn">❮</button>
+                <button onclick="changeImage(-1)" class="nav-btn" id="prevBtn"><ion-icon
+                        name="arrow-back-outline"></ion-icon></button>
                 <img id="mainImage" onclick="openModal()" alt="Carrousel de imagenes de las cabañas">
-                <button onclick="changeImage(1)" class="nav-btn" id="nextBtn">❯</button>
+                <button onclick="changeImage(1)" class="nav-btn" id="nextBtn"><ion-icon
+                        name="arrow-forward-outline"></ion-icon></button>
             </div>
         </section>
         <div id="imageModal" class="modal oculto">
             <span class="close" onclick="closeModal()">&times;</span>
             <img class="modal-content" id="modalImage">
-            <button class="nav-btn" id="prevModalBtn" onclick="changeImage(-1)">❮</button>
-            <button class="nav-btn" id="nextModalBtn" onclick="changeImage(1)">❯</button>
+            <button class="nav-btn" id="prevModalBtn" onclick="changeImage(-1)"><ion-icon
+                    name="arrow-back-outline"></ion-icon></button>
+            <button class="nav-btn" id="nextModalBtn" onclick="changeImage(1)"><ion-icon
+                    name="arrow-forward-outline"></ion-icon></button>
         </div>
         <section class="acerca-de-section" id="acerca-de">
             <div class="order-heading">
@@ -176,7 +231,7 @@
                     que reúnen a la comunidad en cada temporada.
                 </p>
             </div>
-            <div class="info-turistica animate" data-animation="fade-up" data-delay="400">
+            <div class="info-turistica animate" data-animation="fade-left" data-delay="400">
                 <ion-icon name="information-circle-outline"></ion-icon>
                 <p>Villa de Soto, coloquialmente Soto es un municipio y localidad del departamento Cruz del Eje, en la
                     provincia de
@@ -222,7 +277,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1000">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1000">
                     <img src="./img-events/Paseo-de-los-Artesanos.webp" loading="lazy"
                         alt="Paseo de los artesanos en plaza San Roque">
                     <div class="order__content-turistico">
@@ -231,7 +286,7 @@
                             ambiente cultural y acogedor.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1100">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1100">
                     <img src="./img-events/Fiesta-Cervecera.webp" loading="lazy"
                         alt="Fiesta de la cerveza y food trucks en un marco perfecto para reunirnos, compartir y celebrar.">
                     <div class="order__content-turistico">
@@ -241,7 +296,7 @@
                             festivo.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1200">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1200">
                     <img src="./img-events/Carnavales.webp" loading="lazy"
                         alt="Jornada inolvidable llena de color, música y alegría. Las comparsas deslumbraron con su energía, las bandas musicales hicieron vibrar al público, y los foodtrucks, puestos de ventas y artesanos ofrecieron una gran variedad de propuestas para disfrutar.">
                     <div class="order__content-turistico">
@@ -249,7 +304,7 @@
                         <p>Desfiles coloridos con comparsas, música y fiesta en la plaza San Roque.</p>
                     </div>
                 </div>
-                <div class="lugar-turistico animate" data-animation="fade-down" data-delay="1300">
+                <div class="lugar-turistico animate" data-animation="fade-up" data-delay="1300">
                     <img src="./img-events/Sendero-de-la-Cruz.webp" loading="lazy"
                         alt="Sendero de la Cruz en Villa de Soto, ubicado en el Balneario La Toma">
                     <div class="order__content-turistico">
@@ -261,11 +316,36 @@
                 </div>
             </div>
         </section>
+        <section class="testimonios" id="testimonios">
+            <div class="order-heading">
+                <p class="text-contact animate" data-animation="fade-up" data-delay="200">¡Gracias por Elegirnos!</p>
+                <h2 class="heading-subtitle animate" data-animation="fade-down">Testimonios</h2>
+            </div>
+            <div class="testimonio-container">
+                <button id="prev" class="arrow"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                <div class="testimonio">
+                    <img src="" alt="Icono de personas que dieron su reseña sobre las cabañas en Google">
+                    <h3 id="nombre"></h3>
+                    <div id="estrellas" class="estrellas"></div>
+                    <p class="comentario" id="comentario">
+                        "Fui con mi novia en agosto. Las cabañas son bellísimas, muy amplias y completas..."
+                    </p>
+                </div>
+                <button id="next" class="arrow"><ion-icon name="arrow-forward-outline"></ion-icon></button>
+            </div>
+            <div class="order-testimonio">
+                <p class="mensaje animate" data-animation="fade-down" data-delay="400">
+                    Gracias a quienes nos eligen y sus hermosas palabras. Para conocer más detalles, ingresa a través
+                    del botón.
+                </p>
+                <a href="https://www.google.com/maps/place/Complejo+Caba%C3%B1as+Guadalupe/@-30.8492285,-64.9866349,17z/data=!3m1!4b1!4m6!3m5!1s0x942dc9e3d44e9ba7:0xb57d6390efac65fe!8m2!3d-30.8492285!4d-64.9866349!16s%2Fg%2F11j1_gw0px?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" class="boton-reseña">Ver más reseñas<ion-icon name="logo-google"></ion-icon></a>
+            </div>
         </section>
         <section class="container-contacto" id="contacto">
-            <div class="order-heading">
-                <h2 class="heading-contact animate" data-animation="fade-down" data-delay="200">Contacto
-                </h2>
+            <div class="order-heading-contact">
+                <p class="text-contact animate" data-animation="fade-down" data-delay="100">¡Esperamos tu mensaje!</p>
+                <h2 class="heading-contact animate" data-animation="fade-down" data-delay="300">Contacto</h2>
             </div>
             <div class="contact-grid">
                 <div class="map-contact">
@@ -276,9 +356,9 @@
                                 name="location-outline"></ion-icon>
                             Tacuari s/n entre Alvear y Urquiza.</p>
                         <p class="animate" data-animation="fade-up" data-delay="800"><ion-icon
-                                name="call-outline"></ion-icon>351-7370866</p>
+                                name="logo-whatsapp"></ion-icon>351-7370866</p>
                         <p class="animate" data-animation="fade-up" data-delay="1000"><ion-icon
-                                name="call-outline"></ion-icon>351-2292235</p>
+                                name="logo-whatsapp"></ion-icon>351-2292235</p>
                         <p class="animate" data-animation="fade-up" data-delay="1100"><ion-icon
                                 name="mail-outline"></ion-icon>complejoguadalupevds@gmail.com</p>
                         <div class="socials-contact">
@@ -303,19 +383,26 @@
                     <form id="reservaForm">
                         <label for="nombre">Nombre Completo:</label>
                         <input type="text" id="nombre" placeholder="Ingresa tu nombre completo" required>
+
                         <label for="email">Correo Electrónico:</label>
                         <input type="email" id="email" placeholder="Ingresa tu correo electrónico">
+
                         <label for="telefono">Teléfono:</label>
                         <input type="tel" id="telefono" placeholder="Ingresa tu número de télefono" required>
+
                         <label for="fechaEntrada">Fecha de Llegada:</label>
                         <input type="date" id="fechaEntrada" required>
+
                         <label for="fechaSalida">Fecha de Salida:</label>
                         <input type="date" id="fechaSalida" required>
+
                         <label for="personas">Cantidad de Personas:</label>
                         <input type="number" id="personas" min="1" max="5" required>
+
                         <label for="mensaje">¿Alguna Pregunta?</label>
                         <textarea id="mensaje" rows="3" placeholder="Deja tú mensaje..." maxlength="250"></textarea>
                         <p id="contador">250 caracteres restantes</p>
+
                         <button type="submit" id="button">Reservar Ahora</button>
                         <p id="error" class="error"></p>
                     </form>
@@ -335,36 +422,16 @@
             <div class="divider"></div>
             <section class="end__footer-section">
                 <div class="copyright">
-                    <p class="copy">&copy; <span id="year"></span> Complejo Guadalupe | Todos los derechos reservados.
+                    <p class="copy">Copyright &copy; <span id="year"></span> Complejo Guadalupe | Todos los derechos
+                        reservados.
                     </p>
                 </div>
             </section>
         </footer>
     </footer>
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, Timestamp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBkwzNQGQbO6FNn9xkQUEXyJsaq16iJd2E",
-            authDomain: "complejo-guadalupe.firebaseapp.com",
-            projectId: "complejo-guadalupe",
-            storageBucket: "complejo-guadalupe.firebasestorage.app",
-            messagingSenderId: "48792366252",
-            appId: "1:48792366252:web:ed5655411c6d5d18230309"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        window.db = db;
-        window.Timestamp = Timestamp;
-        window.addDoc = addDoc;
-        window.collection = collection;
-    </script>
-    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script defer type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script defer nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./javascript/app.js"></script>
 </body>
 
