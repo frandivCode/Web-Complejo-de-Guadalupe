@@ -1291,6 +1291,7 @@ input.error {
     .nav-links {
         flex-direction: column;
         align-items: start;
+        padding-top: 3rem;
     }
 
     .cabañas-info {
