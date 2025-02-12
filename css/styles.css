@@ -1255,7 +1255,7 @@ input.error {
         display: flex;
         flex-direction: column;
         align-items: start;
-        justify-content: center;
+        justify-content: start;
         position: fixed;
         top: 110px;
         right: 0;
