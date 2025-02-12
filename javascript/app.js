@@ -450,3 +450,11 @@ document.getElementById("next").addEventListener("click", () => {
 });
 
 mostrarTestimonio();
+
+const setNavHeight = () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+};
+
+window.addEventListener('resize', setNavHeight);
+window.addEventListener('load', setNavHeight);
+setNavHeight();
